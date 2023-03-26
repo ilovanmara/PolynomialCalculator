@@ -1,0 +1,238 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "Controller.Controller",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1664073796 { 
+   	label=Controller
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Controller1664073796[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Controller</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   GUI: PolynomialCalculatorView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   op: Arithmetic [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   polynomial1: Polynomial [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   polynomial2: Polynomial [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   result: Polynomial [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2666181 { 
+   	label=View
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   PolynomialCalculatorView2666181[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PolynomialCalculatorView</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   addBtn: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   border: Border [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   c1: Color [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   clearBtn: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   derivativeBtn: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   divideBtn: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   frame: JFrame [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   inputPolynomialLabel1: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   inputPolynomialLabel2: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   inputPolynomialTextField1: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   inputPolynomialTextField2: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   integralBtn: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   m_totalTf: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   multiplyBtn: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   panel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   resultLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   resultTextField: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   subBtn: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   subPanel1: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   subPanel2: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   title: JLabel [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actionPerformed(e: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addAddListener(e: ActionListener)</TD></TR>
+<TR><TD ALIGN="LEFT" ># addBtns()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addClearListener(e: ActionListener)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addDerivativeListener(e: ActionListener)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addDivisionListener(e: ActionListener)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addIntegralListener(e: ActionListener)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addMultiplyListener(e: ActionListener)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addSubListener(e: ActionListener)</TD></TR>
+<TR><TD ALIGN="LEFT" >- createButton(button: JButton)</TD></TR>
+<TR><TD ALIGN="LEFT" >- createTextField(text: JTextField)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getUserInput(text: JTextField): String</TD></TR>
+<TR><TD ALIGN="LEFT" >- insertPanel1()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_74517257 { 
+   	label=Model
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Arithmetic74517257[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Arithmetic</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ add(p1: Polynomial, p2: Polynomial): Polynomial</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addMono(m1: Monomial, m2: Monomial): Monomial</TD></TR>
+<TR><TD ALIGN="LEFT" >+ derivative(p1: Polynomial): Polynomial</TD></TR>
+<TR><TD ALIGN="LEFT" >+ divideMono(m1: Monomial, m2: Monomial): Monomial</TD></TR>
+<TR><TD ALIGN="LEFT" >+ divison(p1: Polynomial, p2: Polynomial): Polynomial[]</TD></TR>
+<TR><TD ALIGN="LEFT" >+ integrate(p1: Polynomial): Polynomial</TD></TR>
+<TR><TD ALIGN="LEFT" >+ multiplication(p1: Polynomial, p2: Polynomial): Polynomial</TD></TR>
+<TR><TD ALIGN="LEFT" >+ multiplicationMono(m1: Monomial, m2: Monomial): Monomial</TD></TR>
+<TR><TD ALIGN="LEFT" >+ sub(p1: Polynomial, p2: Polynomial): Polynomial</TD></TR>
+<TR><TD ALIGN="LEFT" >+ subMono(m1: Monomial, m2: Monomial): Monomial</TD></TR>
+<TR><TD ALIGN="LEFT" >+ verInteger(number: double): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Monomial74517257[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Monomial</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   coef: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   exponent: int [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Polynomial74517257[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Polynomial</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   colections: Collections [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   monomialMap: TreeMap&lt;Integer, Monomial&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addMonom(m: Monomial)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ concat(poly: String, decimals: String, exp: int, coef: double): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ print()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ verifyMono(m: Monomial): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ verifyRegex(polymonial: String): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Controller1664073796 -> Arithmetic74517257[label="op
+[0..1]"];
+Controller1664073796 -> Polynomial74517257[label="polynomial1
+[0..1]"];
+Controller1664073796 -> Polynomial74517257[label="polynomial2
+[0..1]"];
+Controller1664073796 -> Polynomial74517257[label="result
+[0..1]"];
+Controller1664073796 -> PolynomialCalculatorView2666181[label="GUI
+[0..1]"];
+Polynomial74517257 -> Monomial74517257[label="monomialMap
+[0..*]"];
+    
+}
+@enduml
